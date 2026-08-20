@@ -1,0 +1,72 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PictorG · 日系排版形态探索</title>
+<style>
+:root{--paper:#f6f4ef;--ink:#1c1a18;--ink2:#57524b;--ink3:#938d84;--line:#ddd8ce;
+ --mincho:'Hoefler Text','Hiragino Mincho ProN','Yu Mincho','Songti SC',serif;
+ --gothic:'Helvetica Neue','Hiragino Sans',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--mincho);
+ -webkit-font-smoothing:antialiased;padding:64px 28px 96px}
+.wrap{max-width:760px;margin:0 auto}
+h1{font-size:34px;letter-spacing:.14em;font-weight:400}
+.sub{margin-top:12px;font-family:var(--gothic);font-size:10px;letter-spacing:.26em;
+ text-transform:uppercase;color:var(--ink3)}
+.lead{margin-top:30px;font-size:14.5px;line-height:2.05;color:var(--ink2)}
+h2{margin:52px 0 6px;font-size:11px;font-family:var(--gothic);letter-spacing:.24em;
+ text-transform:uppercase;color:var(--ink3);font-weight:400}
+ul{list-style:none;border-top:1px solid var(--line)}
+li{border-bottom:1px solid var(--line)}
+a{display:grid;grid-template-columns:44px 1fr auto;gap:18px;align-items:baseline;
+ padding:14px 2px;color:inherit;text-decoration:none}
+a:hover{background:rgba(0,0,0,.025)}
+.n{font-family:var(--gothic);font-size:9.5px;letter-spacing:.18em;color:var(--ink3)}
+.t{font-size:17px;letter-spacing:.04em}
+.t em{font-style:normal;display:block;margin-top:5px;font-family:var(--gothic);
+ font-size:9.5px;letter-spacing:.16em;color:var(--ink3)}
+.k{font-family:var(--gothic);font-size:9.5px;letter-spacing:.16em;color:var(--ink3)}
+.note{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+ font-family:var(--gothic);font-size:10.5px;line-height:2;color:var(--ink3)}
+</style></head><body><div class="wrap">
+<h1>屋久島</h1>
+<div class="sub">PictorG &nbsp;/&nbsp; 日系排版形态探索 &nbsp;/&nbsp; layout studies</div>
+<p class="lead">用真实素材（屋久島相册 41 张、真实 Fuji EXIF）做的排版形态原型。
+分三组：写真集语域（按「页」构图）、web 作品集语域（按「屏」构图，含 hover 交互）、
+以及印刷输出 —— 三组共用同一个排版引擎 <code>spread.js</code>，
+只是喂进去的容器宽度单位从 px 换成 mm。</p>
+
+<h2>印刷 · PDF</h2>
+<ul>
+<li><a href="../yakushima-share.pdf"><span class="n">PDF</span><span class="t">屋久島 写真集<em>19 页 · A4 横向 297×210mm · 屏幕画质</em></span><span class="k">7 MB</span></a></li>
+<li><a href="../yakushima.pdf"><span class="n">PDF</span><span class="t">同上 · 印刷用<em>约 300dpi 素材 · sRGB</em></span><span class="k">38 MB</span></a></li>
+</ul>
+
+<h2>第一组 · 写真集语域</h2>
+<ul>
+<li><a href="01-spread.html"><span class="n">01</span><span class="t">見開き 跨页序列<em>spread sequence · 推荐</em></span><span class="k">scroll</span></a></li>
+<li><a href="02-yoko.html"><span class="n">02</span><span class="t">横スクロール 写真集<em>page-snap · 需横向滚动</em></span><span class="k">scroll ↔</span></a></li>
+<li><a href="03-index.html"><span class="n">03</span><span class="t">縦書き 目次<em>gallery index</em></span><span class="k">—</span></a></li>
+<li><a href="04-viewer.html"><span class="n">04</span><span class="t">一枚ずつ 掛軸式看图<em>viewer</em></span><span class="k">—</span></a></li>
+<li><a href="00-current.html"><span class="n">00</span><span class="t">现状对照<em>justified grid · 同样的 12 张照片</em></span><span class="k">—</span></a></li>
+</ul>
+
+<h2>第二组 · web 作品集语域</h2>
+<ul>
+<li><a href="11-works.html"><span class="n">A</span><span class="t">works index<em>hover 驱动预览 · 真交互,划一遍</em></span><span class="k">hover</span></a></li>
+<li><a href="10-hero.html"><span class="n">B</span><span class="t">表紙 hero<em>整屏一张 · 深底</em></span><span class="k">—</span></a></li>
+<li><a href="12-scroll.html"><span class="n">C</span><span class="t">100vh 单张序列<em>偏心方向逐屏交替</em></span><span class="k">scroll</span></a></li>
+<li><a href="13-sticky.html"><span class="n">D</span><span class="t">sticky 左栏 + 滚动照片流<em>—</em></span><span class="k">scroll</span></a></li>
+<li><a href="14-dark.html"><span class="n">E</span><span class="t">dark 稀疏网格<em>—</em></span><span class="k">scroll</span></a></li>
+</ul>
+
+<h2>第三组 · 分页排版（浏览器里的纸张）</h2>
+<ul>
+<li><a href="20-print-web.html"><span class="n">20</span><span class="t">CSS Paged Media 版<em>@page + 出血 + 書眉/页码 · 直接 ⌘P 可出 PDF</em></span><span class="k">19 pp</span></a></li>
+</ul>
+
+<p class="note">
+明朝体走系统字体（macOS 的 Hiragino Mincho ProN），非 macOS 会退回本地宋体，观感会变。<br>
+排版引擎 <code>spread.js</code> 是纯函数：<code>planSpreads(photos, width, {maxHeight})</code> → 跨页 tiles。<br>
+照片 © lfkdsk · 屋久島 2024.09
+</p>
+</div></body></html>

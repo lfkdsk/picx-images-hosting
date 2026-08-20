@@ -1,0 +1,100 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<title>屋久島 — print</title><style>
+/* CSS Paged Media:@page 定义纸张,浏览器/Paged.js/Vivliostyle 都认这套 */
+@page {
+  size: 297mm 210mm;
+  margin: 0;                 /* 页边由 .page 的 padding 控,便于做出血 */
+}
+@page :left  { /* 装订侧在右 — 真做对开时用来避开订口 */ }
+@page :right { }
+
+:root{
+  --paper:#f6f4ef; --sumi:#1c1a18; --sumi-2:#57524b; --sumi-3:#938d84;
+  --hairline:#ddd8ce;
+  --mincho:'Hoefler Text','Hiragino Mincho ProN','Yu Mincho','Songti SC',serif;
+  --gothic:'Helvetica Neue','Hiragino Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;font-family:var(--mincho);color:var(--sumi);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+.page{
+  width:297mm; height:210mm;
+  padding:14mm;
+  position:relative; overflow:hidden;
+  background:var(--paper);
+  break-after:page;          /* CSS Fragmentation — 屏幕上无效,分页时生效 */
+  page-break-after:always;
+}
+.page:last-child{break-after:auto;page-break-after:auto}
+.canvas{position:relative;width:269mm;height:182mm}
+.t{position:absolute;overflow:hidden;background:#eae6de}
+
+/* 图注 */
+.cap{position:absolute;white-space:nowrap}
+.cap .n{font-family:var(--gothic);font-size:6pt;letter-spacing:.2em;color:var(--sumi-3)}
+.cap .e{font-family:var(--gothic);font-size:6pt;letter-spacing:.12em;color:var(--sumi-2);
+  margin-top:1mm;font-variant-numeric:tabular-nums}
+.cap .b{font-family:var(--gothic);font-size:5.5pt;letter-spacing:.18em;color:var(--sumi-3);margin-top:.8mm}
+.cap.v{writing-mode:vertical-rl;text-orientation:mixed;display:flex;gap:2.4mm}
+.cap.v>div{margin:0!important}
+.cap .r{border-top:.3pt solid var(--hairline);margin-bottom:2mm}
+.cap.inv .n,.cap.inv .e,.cap.inv .b{color:rgba(255,255,255,.82)}
+
+/* 书眉 / 页码 — 印刷特有的「页面构件」,屏幕版没有对应物 */
+.folio{position:absolute;bottom:6mm;left:14mm;right:14mm;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--gothic);font-size:5.5pt;letter-spacing:.22em;color:var(--sumi-3)}
+.folio .rh{font-family:var(--mincho);font-size:7pt;letter-spacing:.3em}
+
+/* 表紙 */
+.cover .big{position:absolute;left:14mm;bottom:52mm;
+  font-family:var(--mincho);font-size:34pt;letter-spacing:.16em}
+.cover .sub{position:absolute;left:14mm;bottom:40mm;
+  font-family:var(--gothic);font-size:6.5pt;letter-spacing:.34em;text-transform:uppercase;color:var(--sumi-3)}
+.cover .rail{position:absolute;right:14mm;top:14mm;
+  writing-mode:vertical-rl;font-size:9pt;letter-spacing:.4em;color:var(--sumi-2)}
+.cover .hr{position:absolute;left:14mm;bottom:34mm;width:52mm;border-top:.3pt solid var(--hairline)}
+/* 奥付 */
+.colo{padding:14mm;display:flex;flex-direction:column;justify-content:flex-end;height:210mm}
+.colo .l{font-size:9pt;letter-spacing:.3em}
+.colo .m{margin-top:6mm;font-family:var(--gothic);font-size:5.5pt;
+  letter-spacing:.2em;line-height:2.2;color:var(--sumi-3)}
+
+/* 屏幕预览:把纸张摊开成一叠,方便肉眼看。打印时这段被 @media print 关掉 */
+@media screen{
+  body{background:#8f8c86;padding:22px 0}
+  .page{margin:0 auto 22px;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+  .colo{margin:0 auto;background:var(--paper);width:297mm;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+}
+@media print{ .colo{background:var(--paper)} }
+</style></head><body><section class="page cover">
+  <div class="big">屋久島</div>
+  <div class="hr"></div>
+  <div class="sub">YAKUSHIMA &nbsp;/&nbsp; 26 frames &nbsp;/&nbsp; 2024.09</div>
+  <div class="rail">杉と苔と雨のあいだ</div>
+</section><section class="page"><div class="canvas"><div class="t" style="left:-17mm;top:-17mm;width:303mm;height:216mm"><img src="web-photos/IMG_6833-JPEG.jpg"></div><div class="cap  inv" style="left:161.40mm;top:176.00mm"><div class="n">039</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>002</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:114.33mm;top:39.42mm;width:154.67mm;height:103.16mm"><img src="web-photos/DSCF5923.jpg"></div><div class="cap v" style="left:68.33mm;top:82.75mm"><div class="n">002</div><div class="e">27mm  F1.2  1/210s  ISO 640</div><div class="b">2024.09.13</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>003</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:60.53mm;top:54.18mm;width:98.19mm;height:65.49mm"><img src="web-photos/DSCF5958.jpg"></div><div class="t" style="left:170.81mm;top:54.18mm;width:98.19mm;height:73.64mm"><img src="web-photos/IMG_6799.jpg"></div><div class="cap " style="left:60.53mm;top:151.82mm"><div class="n">003</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>004</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:0.00mm;top:18.53mm;width:90.12mm;height:60.10mm"><img src="web-photos/DSCF6065.jpg"></div><div class="t" style="left:103.57mm;top:29.35mm;width:57.84mm;height:86.71mm"><img src="web-photos/IMG_6838-JPEG.jpg"></div><div class="t" style="left:28.24mm;top:88.86mm;width:49.77mm;height:74.61mm"><img src="web-photos/DSCF6079.jpg"></div><div class="cap v" style="left:94.15mm;top:96.86mm"><div class="n">010</div><div class="e">27mm  F1.2  1/100s  ISO 320</div><div class="b">2024.09.14</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>005</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:0.00mm;top:44.35mm;width:139.88mm;height:93.30mm"><img src="web-photos/DSCF6077.jpg"></div><div class="cap " style="left:166.78mm;top:57.41mm"><div class="r" style="width:80.70mm"></div><div class="n">009</div><div class="e">27mm  F1.2  1/210s  ISO 320</div><div class="b">2024.09.14</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>006</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:-17mm;top:-17mm;width:303mm;height:216mm"><img src="web-photos/DSCF6107.jpg"></div><div class="cap  inv" style="left:161.40mm;top:176.00mm"><div class="n">011</div><div class="e">27mm  F1.8  1/300s  ISO 160</div><div class="b">2024.09.14</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>007</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:114.33mm;top:39.42mm;width:154.67mm;height:103.16mm"><img src="web-photos/DSCF6184.jpg"></div><div class="cap v" style="left:68.33mm;top:82.75mm"><div class="n">013</div><div class="e">50mm  F2.8  1/75s  ISO 640</div><div class="b">2024.09.15</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>008</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:0.00mm;top:22.07mm;width:108.95mm;height:72.66mm"><img src="web-photos/IMG_6820-JPEG.jpg"></div><div class="t" style="left:129.12mm;top:40.96mm;width:79.35mm;height:118.97mm"><img src="web-photos/DSCF6179.jpg"></div><div class="cap " style="left:129.12mm;top:181.93mm"><div class="n">012</div><div class="e">56.3mm  F8  1/6s  ISO 100</div><div class="b">2024.09.15</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>009</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:89.73mm;top:0.00mm;width:121.39mm;height:182.00mm"><img src="web-photos/IMG_6827-JPEG.jpg"></div><div class="cap v" style="left:53.62mm;top:76.44mm"><div class="n">038</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>010</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:0.00mm;top:39.24mm;width:90.12mm;height:60.10mm"><img src="web-photos/DSCF6218-Enhanced-NR.jpg"></div><div class="t" style="left:103.57mm;top:50.06mm;width:57.84mm;height:38.57mm"><img src="web-photos/DSCF6265-Enhanced-SR.jpg"></div><div class="t" style="left:28.24mm;top:109.57mm;width:49.77mm;height:33.19mm"><img src="web-photos/DSCF6230-Enhanced-NR.jpg"></div><div class="cap v" style="left:94.15mm;top:117.57mm"><div class="n">016</div><div class="e">233.4mm  F6.3  1/160s  ISO 3200</div><div class="b">2024.09.15</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>011</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:-17mm;top:-17mm;width:303mm;height:216mm"><img src="web-photos/DSCF6285-Enhanced-NR.jpg"></div><div class="cap  inv" style="left:161.40mm;top:176.00mm"><div class="n">020</div><div class="e">218.1mm  F6.3  1/240s  ISO 3200</div><div class="b">2024.09.15</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>012</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:114.33mm;top:39.42mm;width:154.67mm;height:103.16mm"><img src="web-photos/DSCF6185.jpg"></div><div class="cap v" style="left:68.33mm;top:82.75mm"><div class="n">014</div><div class="e">140mm  F4.5  1/1000s  ISO 320</div><div class="b">2024.09.15</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>013</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:60.53mm;top:58.26mm;width:98.19mm;height:65.49mm"><img src="web-photos/DSCF6405.jpg"></div><div class="t" style="left:170.81mm;top:58.26mm;width:98.19mm;height:65.49mm"><img src="web-photos/DSCF6419.jpg"></div><div class="cap " style="left:60.53mm;top:147.74mm"><div class="n">029</div><div class="e">27mm  F7.1  1/3500s  ISO 640</div><div class="b">2024.09.16</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>014</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:0.00mm;top:39.24mm;width:90.12mm;height:60.10mm"><img src="web-photos/DSCF6431.jpg"></div><div class="t" style="left:103.57mm;top:50.06mm;width:57.84mm;height:38.57mm"><img src="web-photos/DSCF6033.jpg"></div><div class="t" style="left:28.24mm;top:109.57mm;width:49.77mm;height:33.19mm"><img src="web-photos/DSCF6379.jpg"></div><div class="cap v" style="left:94.15mm;top:117.57mm"><div class="n">023</div><div class="e">27mm  F1.2  1/300s  ISO 160</div><div class="b">2024.09.15</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>015</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:0.00mm;top:44.35mm;width:139.88mm;height:93.30mm"><img src="web-photos/DSCF6390.jpg"></div><div class="cap " style="left:166.78mm;top:57.41mm"><div class="r" style="width:80.70mm"></div><div class="n">027</div><div class="e">27mm  F2  1/34s  ISO 800</div><div class="b">2024.09.15</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>016</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:-17mm;top:-17mm;width:303mm;height:216mm"><img src="web-photos/IMG_6772.jpg"></div><div class="cap  inv" style="left:161.40mm;top:176.00mm"><div class="n">035</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>017</span></div></section><section class="page"><div class="canvas"><div class="t" style="left:114.33mm;top:39.42mm;width:154.67mm;height:103.16mm"><img src="web-photos/IMG_6867.jpg"></div><div class="cap v" style="left:68.33mm;top:82.75mm"><div class="n">041</div></div></div>
+  <div class="folio"><span class="rh">屋久島</span><span>018</span></div></section><section class="page colo"><div class="l">屋久島 · 完</div>
+  <div class="m">PHOTOGRAPHS &nbsp;lfkdsk<br>
+  FUJIFILM X-S20 &nbsp;/&nbsp; XF 27mm F1.2, XF 16-80mm F4<br>
+  2024.09.13 — 09.16 &nbsp;·&nbsp; 30.36°N 130.53°E<br>
+  SET IN HIRAGINO MINCHO PRON &amp; HELVETICA NEUE<br>
+  297 × 210 mm &nbsp;·&nbsp; 19 pp &nbsp;·&nbsp; GENERATED BY PICTORG</div>
+  </section></body></html>

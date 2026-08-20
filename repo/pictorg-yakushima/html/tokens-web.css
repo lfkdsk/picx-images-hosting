@@ -1,0 +1,38 @@
+/* ── 「web 作品集」语域 ──────────────────────────────────────────────
+   和 tokens.css(写真集/印刷物) 的关键差别:
+   · 主字体从明朝体翻转为极小字距拉开的 grotesk,明朝体只做 display
+   · 构图单位从「页」变成「屏」— 固定 chrome 常驻,内容按 100vh 编排
+   · hover / scroll 进度是构图的一部分,不是装饰                        */
+:root{
+  --paper:#f2f1ee; --paper-2:#e8e7e3;
+  --ink:#111110; --ink-2:#5c5a55; --ink-3:#9b9891;
+  --line:#d8d6d0; --line-2:#e6e4df;
+  --shu:#c1440e;
+  /* dark 变体 — 摄影作品集常走深底,照片跳出来 */
+  --nero:#0e0e0d; --nero-2:#1a1a18;
+  --snow:#eae8e3; --snow-2:#8d8a84; --snow-3:#565450;
+
+  --gothic:'Helvetica Neue','Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif;
+  --mincho:'Hoefler Text','Hiragino Mincho ProN','Yu Mincho','Songti SC',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--paper);color:var(--ink);
+  font-family:var(--gothic);-webkit-font-smoothing:antialiased}
+img{display:block}
+
+/* 作品集的字体只有三档,不多不少 */
+.t-nav{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2)}
+.t-num{font-size:9.5px;letter-spacing:.2em;color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.t-disp{font-family:var(--mincho);font-weight:400;letter-spacing:.02em}
+
+/* 常驻 chrome */
+.chrome{position:fixed;inset:0;pointer-events:none;z-index:50}
+.chrome>*{position:absolute;pointer-events:auto}
+.c-tl{top:30px;left:38px} .c-tr{top:30px;right:38px}
+.c-bl{bottom:28px;left:38px} .c-br{bottom:28px;right:38px}
+.c-tr nav{display:flex;gap:26px}
+.mark{font-family:var(--mincho);font-size:15px;letter-spacing:.16em}
+.prog{position:fixed;top:0;left:0;height:2px;background:var(--ink);z-index:60}
+.tate{writing-mode:vertical-rl;text-orientation:mixed}
+.seal{display:inline-block;width:4px;height:4px;background:var(--shu);border-radius:50%}

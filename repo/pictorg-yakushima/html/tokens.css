@@ -1,0 +1,30 @@
+/* ── 日系雅致 token set ────────────────────────────────────────────────
+   Shifted off PictorG's current warm/terracotta editorial palette:
+   cooler & lower-chroma paper, sumi ink text, no accent on viewing
+   surfaces, 0 radius, hairlines instead of shadows.               */
+:root{
+  --paper:      #f6f4ef;   /* 生成り kinari — unbleached, cool-warm neutral */
+  --paper-alt:  #fbfaf7;
+  --sumi:       #1c1a18;   /* 墨 */
+  --sumi-2:     #57524b;
+  --sumi-3:     #938d84;   /* metadata */
+  --hairline:   #ddd8ce;
+  --hairline-2: #ebe7de;
+  --shu:        #c1440e;   /* 朱 — one seal-like dot per screen, never more */
+
+  /* Latin serif first so Latin glyphs come from it; Mincho carries CJK. */
+  --mincho: 'Hoefler Text','Baskerville','Hiragino Mincho ProN','Yu Mincho','Songti SC',serif;
+  --gothic: 'Helvetica Neue','Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--sumi);
+  font-family:var(--mincho);-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* metadata: tiny, tracked out, gothic — the "IMA magazine" tell */
+.meta{font-family:var(--gothic);font-size:9.5px;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--sumi-3);line-height:1.9;
+  font-variant-numeric:tabular-nums}
+.tate{writing-mode:vertical-rl;text-orientation:mixed}
+.rule{border:0;border-top:1px solid var(--hairline)}
+.seal{width:5px;height:5px;background:var(--shu);border-radius:50%}
